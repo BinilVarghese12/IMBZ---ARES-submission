@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_74ec72de223495d42bc54e73edde6f73 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; bottom: 25px; left: 25px; z-index: 9999;
+                background: white; padding: 10px 12px; border: 1px solid #aaa;
+                border-radius: 6px; font-size: 13px;">
+      <b>A.R.E.S. allocation</b><br>
+      <span style="color:red">●</span> More ambulances recommended<br>
+      <span style="color:blue">●</span> Fewer ambulances recommended<br>
+      <span style="color:green">●</span> No change
+    </div>
+    
+    
+            <div class="folium-map" id="map_74ec72de223495d42bc54e73edde6f73" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_74ec72de223495d42bc54e73edde6f73 = L.map(
+                "map_74ec72de223495d42bc54e73edde6f73",
+                {
+                    center: [53.48, -2.24],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 9,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_dfa7a56d69abc1b18a07032c640a9794 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_dfa7a56d69abc1b18a07032c640a9794.addTo(map_74ec72de223495d42bc54e73edde6f73);
+        
+    
+            var marker_c16ad853561aaa4328181006b4f5da0d = L.marker(
+                [53.545, -2.632],
+                {
+}
+            ).addTo(map_74ec72de223495d42bc54e73edde6f73);
+        
+    
+            var icon_11be72247e5c6290c695efb4f1d690dc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6605eeda47b288f79131bf73141482ab = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_769636f329fff7517510a78988b0c31b = $(`<div id="html_769636f329fff7517510a78988b0c31b" style="width: 100.0%; height: 100.0%;"><b>Wigan Depot</b><br>District: Wigan<br>Forecast calls/hour: 4.0<br>Current ambulances: 4<br>Recommended ambulances: 3<br>Change: -1 ambulance(s)<br>Minimum required: 5<br>Unmet minimum: 2</div>`)[0];
+                popup_6605eeda47b288f79131bf73141482ab.setContent(html_769636f329fff7517510a78988b0c31b);
+            
+        
+
+        marker_c16ad853561aaa4328181006b4f5da0d.bindPopup(popup_6605eeda47b288f79131bf73141482ab)
+        ;
+
+        
+    
+    
+            marker_c16ad853561aaa4328181006b4f5da0d.bindTooltip(
+                `<div>
+                     Wigan Depot: 3 recommended
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c16ad853561aaa4328181006b4f5da0d.setIcon(icon_11be72247e5c6290c695efb4f1d690dc);
+            
+    
+            var marker_10dc711dc244372d5c9c579d0e997317 = L.marker(
+                [53.5409, -2.1114],
+                {
+}
+            ).addTo(map_74ec72de223495d42bc54e73edde6f73);
+        
+    
+            var icon_e2ca9e299f2ddec5be42a50f0ca612da = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_580b01c36eed0cb9d0578b5a67ca07a5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ab4ba281091abb9f6eda449ea8a0fbff = $(`<div id="html_ab4ba281091abb9f6eda449ea8a0fbff" style="width: 100.0%; height: 100.0%;"><b>Oldham Depot</b><br>District: Oldham<br>Forecast calls/hour: 3.2<br>Current ambulances: 3<br>Recommended ambulances: 2<br>Change: -1 ambulance(s)<br>Minimum required: 4<br>Unmet minimum: 2</div>`)[0];
+                popup_580b01c36eed0cb9d0578b5a67ca07a5.setContent(html_ab4ba281091abb9f6eda449ea8a0fbff);
+            
+        
+
+        marker_10dc711dc244372d5c9c579d0e997317.bindPopup(popup_580b01c36eed0cb9d0578b5a67ca07a5)
+        ;
+
+        
+    
+    
+            marker_10dc711dc244372d5c9c579d0e997317.bindTooltip(
+                `<div>
+                     Oldham Depot: 2 recommended
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_10dc711dc244372d5c9c579d0e997317.setIcon(icon_e2ca9e299f2ddec5be42a50f0ca612da);
+            
+    
+            var marker_59a593d9b76fbb5804ab346125f6c9a0 = L.marker(
+                [53.615, -2.155],
+                {
+}
+            ).addTo(map_74ec72de223495d42bc54e73edde6f73);
+        
+    
+            var icon_07b2a4847cfe68a58b7d09a4f099f6a4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fc135f00e134e240a10e4d3d13480996 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_203a30195e8c2121e4a41e990355803d = $(`<div id="html_203a30195e8c2121e4a41e990355803d" style="width: 100.0%; height: 100.0%;"><b>Rochdale Depot</b><br>District: Rochdale<br>Forecast calls/hour: 3.1<br>Current ambulances: 3<br>Recommended ambulances: 2<br>Change: -1 ambulance(s)<br>Minimum required: 4<br>Unmet minimum: 2</div>`)[0];
+                popup_fc135f00e134e240a10e4d3d13480996.setContent(html_203a30195e8c2121e4a41e990355803d);
+            
+        
+
+        marker_59a593d9b76fbb5804ab346125f6c9a0.bindPopup(popup_fc135f00e134e240a10e4d3d13480996)
+        ;
+
+        
+    
+    
+            marker_59a593d9b76fbb5804ab346125f6c9a0.bindTooltip(
+                `<div>
+                     Rochdale Depot: 2 recommended
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_59a593d9b76fbb5804ab346125f6c9a0.setIcon(icon_07b2a4847cfe68a58b7d09a4f099f6a4);
+            
+    
+            var marker_c769abae400c5a25094dbfb760920cc6 = L.marker(
+                [53.4809, -2.0807],
+                {
+}
+            ).addTo(map_74ec72de223495d42bc54e73edde6f73);
+        
+    
+            var icon_39cdd736ade99d67f684cea22ebb6908 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_351124bd4cf2644eac1631df1f4f3678 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cfd278eb776f4dfaf53af82589b2bf8b = $(`<div id="html_cfd278eb776f4dfaf53af82589b2bf8b" style="width: 100.0%; height: 100.0%;"><b>Tameside Depot</b><br>District: Tameside<br>Forecast calls/hour: 3.3<br>Current ambulances: 3<br>Recommended ambulances: 3<br>Change: No change<br>Minimum required: 4<br>Unmet minimum: 1</div>`)[0];
+                popup_351124bd4cf2644eac1631df1f4f3678.setContent(html_cfd278eb776f4dfaf53af82589b2bf8b);
+            
+        
+
+        marker_c769abae400c5a25094dbfb760920cc6.bindPopup(popup_351124bd4cf2644eac1631df1f4f3678)
+        ;
+
+        
+    
+    
+            marker_c769abae400c5a25094dbfb760920cc6.bindTooltip(
+                `<div>
+                     Tameside Depot: 3 recommended
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c769abae400c5a25094dbfb760920cc6.setIcon(icon_39cdd736ade99d67f684cea22ebb6908);
+            
+    
+            var marker_611de7073424743daa1e88b11f2acc11 = L.marker(
+                [53.5933, -2.2966],
+                {
+}
+            ).addTo(map_74ec72de223495d42bc54e73edde6f73);
+        
+    
+            var icon_bb261d2964f40111a0def5b1200058c5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_151089cd968675f61b0eb1dddf9126c6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d4f97039e2010751fd157726d320366c = $(`<div id="html_d4f97039e2010751fd157726d320366c" style="width: 100.0%; height: 100.0%;"><b>Bury Depot</b><br>District: Bury<br>Forecast calls/hour: 2.7<br>Current ambulances: 3<br>Recommended ambulances: 2<br>Change: -1 ambulance(s)<br>Minimum required: 3<br>Unmet minimum: 1</div>`)[0];
+                popup_151089cd968675f61b0eb1dddf9126c6.setContent(html_d4f97039e2010751fd157726d320366c);
+            
+        
+
+        marker_611de7073424743daa1e88b11f2acc11.bindPopup(popup_151089cd968675f61b0eb1dddf9126c6)
+        ;
+
+        
+    
+    
+            marker_611de7073424743daa1e88b11f2acc11.bindTooltip(
+                `<div>
+                     Bury Depot: 2 recommended
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_611de7073424743daa1e88b11f2acc11.setIcon(icon_bb261d2964f40111a0def5b1200058c5);
+            
+    
+            var marker_3485f7bde8a24116a9810c97fc9a962a = L.marker(
+                [53.4808, -2.2426],
+                {
+}
+            ).addTo(map_74ec72de223495d42bc54e73edde6f73);
+        
+    
+            var icon_b57c275833b10e167da12866cbae8c09 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_aaafff5e6dc3ba2292c175f74977430a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4687dec99c9b39146726c7b7c20f88cc = $(`<div id="html_4687dec99c9b39146726c7b7c20f88cc" style="width: 100.0%; height: 100.0%;"><b>Manchester Central Depot</b><br>District: Manchester<br>Forecast calls/hour: 8.2<br>Current ambulances: 8<br>Recommended ambulances: 9<br>Change: +1 ambulance(s)<br>Minimum required: 9<br>Unmet minimum: 0</div>`)[0];
+                popup_aaafff5e6dc3ba2292c175f74977430a.setContent(html_4687dec99c9b39146726c7b7c20f88cc);
+            
+        
+
+        marker_3485f7bde8a24116a9810c97fc9a962a.bindPopup(popup_aaafff5e6dc3ba2292c175f74977430a)
+        ;
+
+        
+    
+    
+            marker_3485f7bde8a24116a9810c97fc9a962a.bindTooltip(
+                `<div>
+                     Manchester Central Depot: 9 recommended
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3485f7bde8a24116a9810c97fc9a962a.setIcon(icon_b57c275833b10e167da12866cbae8c09);
+            
+    
+            var marker_a3ab45d5317ec461d0168de8b50db591 = L.marker(
+                [53.4875, -2.2901],
+                {
+}
+            ).addTo(map_74ec72de223495d42bc54e73edde6f73);
+        
+    
+            var icon_c8e3f4d2da53c51b00ceeeb2235c0ef1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e5086014e711214753e162745a156cc8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a6d013f5a10179f486ed6d9ddadda736 = $(`<div id="html_a6d013f5a10179f486ed6d9ddadda736" style="width: 100.0%; height: 100.0%;"><b>Salford Depot</b><br>District: Salford<br>Forecast calls/hour: 5.1<br>Current ambulances: 5<br>Recommended ambulances: 6<br>Change: +1 ambulance(s)<br>Minimum required: 6<br>Unmet minimum: 0</div>`)[0];
+                popup_e5086014e711214753e162745a156cc8.setContent(html_a6d013f5a10179f486ed6d9ddadda736);
+            
+        
+
+        marker_a3ab45d5317ec461d0168de8b50db591.bindPopup(popup_e5086014e711214753e162745a156cc8)
+        ;
+
+        
+    
+    
+            marker_a3ab45d5317ec461d0168de8b50db591.bindTooltip(
+                `<div>
+                     Salford Depot: 6 recommended
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a3ab45d5317ec461d0168de8b50db591.setIcon(icon_c8e3f4d2da53c51b00ceeeb2235c0ef1);
+            
+    
+            var marker_0859fbb03b54b54e31b318c71e90bc47 = L.marker(
+                [53.5769, -2.4282],
+                {
+}
+            ).addTo(map_74ec72de223495d42bc54e73edde6f73);
+        
+    
+            var icon_0517a44c73d4b7f6bf3ea9d60bd00ea8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b1763536c7036241eed51867c45a7550 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bfce87dc4b0bc1a8e01e78fd74e96ba0 = $(`<div id="html_bfce87dc4b0bc1a8e01e78fd74e96ba0" style="width: 100.0%; height: 100.0%;"><b>Bolton Depot</b><br>District: Bolton<br>Forecast calls/hour: 4.8<br>Current ambulances: 5<br>Recommended ambulances: 6<br>Change: +1 ambulance(s)<br>Minimum required: 6<br>Unmet minimum: 0</div>`)[0];
+                popup_b1763536c7036241eed51867c45a7550.setContent(html_bfce87dc4b0bc1a8e01e78fd74e96ba0);
+            
+        
+
+        marker_0859fbb03b54b54e31b318c71e90bc47.bindPopup(popup_b1763536c7036241eed51867c45a7550)
+        ;
+
+        
+    
+    
+            marker_0859fbb03b54b54e31b318c71e90bc47.bindTooltip(
+                `<div>
+                     Bolton Depot: 6 recommended
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0859fbb03b54b54e31b318c71e90bc47.setIcon(icon_0517a44c73d4b7f6bf3ea9d60bd00ea8);
+            
+    
+            var marker_106fbecba05f1a3036a7b021a7933339 = L.marker(
+                [53.4106, -2.1575],
+                {
+}
+            ).addTo(map_74ec72de223495d42bc54e73edde6f73);
+        
+    
+            var icon_b1326e632eef52ea6e5db104480bf222 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2caf96559d33189f56f7404359669b74 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6e10901cab4bb89c438a649ec01e02e3 = $(`<div id="html_6e10901cab4bb89c438a649ec01e02e3" style="width: 100.0%; height: 100.0%;"><b>Stockport Depot</b><br>District: Stockport<br>Forecast calls/hour: 4.2<br>Current ambulances: 4<br>Recommended ambulances: 5<br>Change: +1 ambulance(s)<br>Minimum required: 5<br>Unmet minimum: 0</div>`)[0];
+                popup_2caf96559d33189f56f7404359669b74.setContent(html_6e10901cab4bb89c438a649ec01e02e3);
+            
+        
+
+        marker_106fbecba05f1a3036a7b021a7933339.bindPopup(popup_2caf96559d33189f56f7404359669b74)
+        ;
+
+        
+    
+    
+            marker_106fbecba05f1a3036a7b021a7933339.bindTooltip(
+                `<div>
+                     Stockport Depot: 5 recommended
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_106fbecba05f1a3036a7b021a7933339.setIcon(icon_b1326e632eef52ea6e5db104480bf222);
+            
+    
+            var marker_7107be220a80077bd34a57f29954a8a7 = L.marker(
+                [53.425, -2.326],
+                {
+}
+            ).addTo(map_74ec72de223495d42bc54e73edde6f73);
+        
+    
+            var icon_85e0b2aba0e7e486ac00ac3074337be5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5b3a3815bb6a10668cdcc1b429c15bc7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7200980b197cab75756f429af6081d39 = $(`<div id="html_7200980b197cab75756f429af6081d39" style="width: 100.0%; height: 100.0%;"><b>Trafford Depot</b><br>District: Trafford<br>Forecast calls/hour: 3.7<br>Current ambulances: 4<br>Recommended ambulances: 4<br>Change: No change<br>Minimum required: 4<br>Unmet minimum: 0</div>`)[0];
+                popup_5b3a3815bb6a10668cdcc1b429c15bc7.setContent(html_7200980b197cab75756f429af6081d39);
+            
+        
+
+        marker_7107be220a80077bd34a57f29954a8a7.bindPopup(popup_5b3a3815bb6a10668cdcc1b429c15bc7)
+        ;
+
+        
+    
+    
+            marker_7107be220a80077bd34a57f29954a8a7.bindTooltip(
+                `<div>
+                     Trafford Depot: 4 recommended
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7107be220a80077bd34a57f29954a8a7.setIcon(icon_85e0b2aba0e7e486ac00ac3074337be5);
+            
+</script>
+</html>
